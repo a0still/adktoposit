@@ -18,6 +18,17 @@ from ui import app_ui
 # Load environment variables
 dotenv.load_dotenv()
 
+# Ensure documentation directory exists
+docs_dir = Path("Shrink_Documentation")
+try:
+    docs_dir.mkdir(exist_ok=True)
+    intro_file = docs_dir / "introduction.md"
+    if not intro_file.exists():
+        with open(intro_file, "w") as f:
+            f.write("# ADK Documentation\n\nThis is the default documentation file.")
+except Exception as e:
+    print(f"Warning: Could not create documentation directory: {e}")
+
 def server(input: Inputs, output: Outputs, session: Session):
     """Define the server logic"""
     
