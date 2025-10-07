@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "locale": "en_US.UTF-8",
+  "python": {
+    "version": "3.12",
+    "package_manager": {
+      "name": "pip",
+      "version": "23.0",
+      "package_file": "requirements.txt"
+    }
+  },
+  "files": {
+    "vertex_stock_analysis.ipynb": {
+      "content_category": "notebook"
+    },
+    "requirements.txt": {
+    }
+  }
+}
