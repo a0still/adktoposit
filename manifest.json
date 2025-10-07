@@ -1,6 +1,10 @@
 {
   "version": 1,
   "locale": "en_US.UTF-8",
+  "metadata": {
+    "appmode": "jupyter-static",
+    "entrypoint": "vertex_stock_analysis.ipynb"
+  },
   "python": {
     "version": "3.12",
     "package_manager": {
@@ -11,9 +15,8 @@
   },
   "files": {
     "vertex_stock_analysis.ipynb": {
-      "content_category": "notebook"
+      "checksum": ""
     },
-    "requirements.txt": {
-    }
+    "requirements.txt": {}
   }
 }
