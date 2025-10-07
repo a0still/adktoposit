@@ -1,6 +1,6 @@
 uvicorn==0.34.0
 shiny>=1.1.0
-dotenv
+python-dotenv
 faicons
 plotly
 numpy
@@ -16,6 +16,7 @@ asyncio
 tabulate
 db_dtypes
 langchain
+langchain-google-vertexai
 xlsxwriter
 crewAI==0.102.0
 langchain-community
