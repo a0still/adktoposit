@@ -9,14 +9,17 @@
     "version": "3.12",
     "package_manager": {
       "name": "pip",
-      "version": "23.0",
+      "version": "23.2.1",
       "package_file": "requirements.txt"
     }
   },
+  "environment": {
+    "image": "python:3.12"
+  },
   "files": {
-    "vertex_stock_analysis.ipynb": {
-      "checksum": ""
-    },
-    "requirements.txt": {}
+    "requirements.txt": {},
+    "vertex_stock_analysis.ipynb": {},
+    "key.json": {},
+    "config/agent_config.yaml": {}
   }
 }
