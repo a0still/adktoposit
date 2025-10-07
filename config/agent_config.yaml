@@ -1,0 +1,33 @@
+display_name: "ADK-Posit-Demo-Agent"
+description: "Demo agent for ADK-Posit integration showcasing data visualization and chat capabilities"
+agent_type: "chat"
+max_iterations: 5
+tools:
+  - name: "data_retrieval"
+    description: "Retrieve data from specified sources"
+    function: "retrieve_data"
+    parameters:
+      type: "object"
+      properties:
+        source:
+          type: "string"
+          description: "Data source identifier"
+        query:
+          type: "string"
+          description: "Query to retrieve data"
+      required: ["source", "query"]
+
+  - name: "visualization"
+    description: "Create data visualizations"
+    function: "create_visualization"
+    parameters:
+      type: "object"
+      properties:
+        data_ref:
+          type: "string"
+          description: "Reference to the data to visualize"
+        viz_type:
+          type: "string"
+          enum: ["table", "line", "bar", "scatter"]
+          description: "Type of visualization to create"
+      required: ["data_ref", "viz_type"]
