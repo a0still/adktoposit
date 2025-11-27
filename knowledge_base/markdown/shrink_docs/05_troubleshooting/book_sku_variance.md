@@ -1,0 +1,326 @@
+# Troubleshooting: High Book vs SKU Variance
+
+## Problem Statement
+
+Your department or store shows a significant Book vs SKU variance, meaning your physical inventory (SKU) is lower than your financial records (Book). This indicates shrink - loss of inventory that's impacting your profitability.
+
+**What This Means:**
+- Missing merchandise that you paid for
+- Financial losses affecting store performance
+- Potential theft, errors, or operational issues
+
+---
+
+## Common Causes
+
+### 1. **External Theft (Shoplifting)**
+
+**Why it happens:**
+- High-value, easily concealable items
+- Inadequate security measures or monitoring
+- Store layout provides concealment opportunities
+- Known high-theft items not properly secured
+
+**How to identify it:**
+- Specific items consistently missing
+- Variance concentrated in departments with high-theft items
+- Pattern during specific times/days
+- AP reports confirm theft incidents
+
+### 2. **Internal Theft (Employee Theft)**
+
+**Why it happens:**
+- Access to merchandise and systems
+- Inadequate oversight or controls
+- Financial pressures or opportunity
+
+**How to identify it:**
+- Unexplained inventory adjustments
+- Missing merchandise from secure areas
+- Discrepancies in high-value items
+- Pattern associated with specific shifts/employees
+
+### 3. **Inventory Inaccuracy (Counting Errors)**
+
+**Why it happens:**
+- Poor cycle counting practices
+- Not investigating discrepancies before adjusting
+- Associates unfamiliar with proper procedures
+- Rushing through counts
+
+**How to identify it:**
+- Frequent on-hand adjustments
+- Counts that don't match previous counts
+- Variance spread across many items vs. specific high-value items
+- No clear pattern by time or department
+
+### 4. **Receiving Errors**
+
+**Why it happens:**
+- Not verifying quantities received
+- Trusting BOL (Bill of Lading) without counting
+- Vendor short-shipping
+- Receiving to wrong items/departments
+
+**How to identify it:**
+- Variance appears immediately after receiving
+- Specific vendors show patterns
+- Discrepancies in newly received items
+- BOL quantities don't match actual received
+
+### 5. **Markdown Errors**
+
+**Why it happens:**
+- Taking markdowns without proper justification
+- Incorrect markdown amounts
+- Marking down items not in inventory
+- Not following markdown procedures
+
+**How to identify it:**
+- High markdown dollars without corresponding damaged merchandise
+- Markdown taken but items still at full price
+- Unusual patterns in markdown activity
+- Markdowns not matching damaged/clearance merchandise
+
+---
+
+## Investigation Steps
+
+### Step 1: Analyze the Data
+
+**What to check:**
+- IRR Report - Identify which departments have highest variance
+- Trend analysis - Is variance increasing or consistent?
+- Item-level data - Which specific items are contributing?
+
+**Where to look:**
+- IRR Dashboard (this application)
+- Item history reports
+- Department performance over time
+
+**What to expect:**
+- High-shrink departments will stand out
+- Patterns may emerge (specific items, times, locations)
+
+### Step 2: Physical Verification
+
+**What to check:**
+- Cycle count high-value items in affected departments
+- Verify on-hand accuracy for top contributors
+- Check for merchandise in wrong locations
+
+**Where to look:**
+- Primary shelf locations
+- Backroom/overstock
+- Wrong departments (merchandise placed incorrectly)
+- Returns area
+
+**What to expect:**
+- Discrepancies will be confirmed or explained
+- May find merchandise in unexpected locations
+
+### Step 3: Review Transactions
+
+**What to check:**
+- Recent markdowns in affected departments
+- On-hand adjustments (who, when, why)
+- Receiving history for the month
+- Transfer activity (MTRs)
+
+**Where to look:**
+- Markdown reports
+- Adjustment logs
+- Receiving reports
+- Transfer documents
+
+**What to expect:**
+- Unusual patterns may emerge
+- Errors or suspicious activity may be identified
+
+### Step 4: Partner with Asset Protection
+
+**What to check:**
+- Known theft incidents in affected departments
+- Camera footage for high-shrink areas
+- ORC (Organized Retail Crime) activity
+- Internal theft indicators
+
+**Where to look:**
+- AP reports and incident logs
+- Camera system (with AP)
+- Exception reports
+
+**What to expect:**
+- AP may have insights on theft patterns
+- Video evidence may be available
+- Recommendations for security improvements
+
+### Step 5: Interview Associates
+
+**What to check:**
+- Are associates following proper procedures?
+- Have they noticed anything unusual?
+- Do they understand cycle counting, markdowns, receiving?
+- Are there operational issues they've identified?
+
+**Where to look:**
+- Talk to department associates
+- Consult with department managers
+- Check with receiving team
+
+**What to expect:**
+- Insights on operational issues
+- Potential witnesses to theft
+- Training needs identified
+
+---
+
+## Solutions
+
+### If Cause is External Theft:
+
+1. **Increase security measures**
+   - Add EAS tags to high-theft items
+   - Improve camera coverage
+   - Increase associate presence in affected areas
+   - Implement merchandise placement changes
+
+2. **Enhance monitoring**
+   - Increase cycle count frequency for high-risk items
+   - Implement daily counts for top 10 shrink items
+   - Review camera footage proactively
+
+3. **Expected outcome**
+   - Variance should decrease within 1-2 months
+   - Theft deterrence measures visible
+   - Pattern changes as thieves move to easier targets
+
+### If Cause is Internal Theft:
+
+1. **Work with Asset Protection**
+   - Follow AP recommendations
+   - Document policy violations
+   - Ensure proper investigation
+
+2. **Implement controls**
+   - Increase oversight in affected areas
+   - Review authorization levels
+   - Audit adjustment activity
+
+3. **Expected outcome**
+   - Resolution of theft issue
+   - Prevention of future internal theft
+   - Improved culture of accountability
+
+### If Cause is Inventory Inaccuracy:
+
+1. **Improve counting practices**
+   - Retrain associates on cycle counting
+   - Implement double-count verification for high-value items
+   - Require investigation before adjustments
+
+2. **Increase accountability**
+   - Document all on-hand changes with reasons
+   - Review adjustment logs weekly
+   - Follow up on unexplained adjustments
+
+3. **Expected outcome**
+   - More accurate on-hands
+   - Variance decreases as accuracy improves
+   - Fewer unexplained adjustments
+
+### If Cause is Receiving Errors:
+
+1. **Improve receiving procedures**
+   - Count EVERYTHING - don't trust BOLs
+   - Implement receiving checklists
+   - Train receiving associates
+
+2. **Verify vendor accuracy**
+   - Track vendors with frequent discrepancies
+   - File claims for short shipments
+   - Request accountability from vendors
+
+3. **Expected outcome**
+   - Variance related to receiving decreases
+   - Vendor performance improves
+   - More accurate initial inventory records
+
+### If Cause is Markdown Errors:
+
+1. **Review markdown procedures**
+   - Ensure associates understand proper markdown authorization
+   - Verify markdowns match damaged/clearance merchandise
+   - Implement markdown approval process
+
+2. **Audit markdown activity**
+   - Review recent markdowns for accuracy
+   - Correct errors identified
+   - Prevent future errors through training
+
+3. **Expected outcome**
+   - Markdown dollars align with legitimate markdowns
+   - Fewer markdown-related variances
+   - Improved compliance with procedures
+
+---
+
+## Prevention
+
+### Ongoing Best Practices:
+
+1. **Regular Cycle Counting**
+   - Daily counts for high-value, high-theft items
+   - Weekly counts for medium-risk items
+   - Monthly counts for low-risk items
+
+2. **Monitor Key Metrics**
+   - Review IRR report monthly
+   - Track Book vs SKU trends by department
+   - Identify issues early before they become significant
+
+3. **Partner with Asset Protection**
+   - Regular meetings to review shrink data
+   - Implement recommended security measures
+   - Share information on suspicious activity
+
+4. **Train Your Team**
+   - Ensure all associates understand procedures
+   - Provide ongoing training on cycle counting, receiving, markdowns
+   - Create culture of accountability
+
+5. **Investigate Promptly**
+   - Don't ignore small variances
+   - Investigate discrepancies immediately
+   - Document findings and actions taken
+
+6. **Communicate**
+   - Share shrink results with team
+   - Celebrate improvements
+   - Address concerns promptly
+
+---
+
+## When to Escalate
+
+Contact your District Manager or Regional AP if:
+- Variance exceeds $10,000 and cause unclear
+- Suspected internal theft
+- Organized retail crime activity
+- Variance continues to increase despite interventions
+- Need additional resources or support
+
+---
+
+## Related Topics
+
+- [Book vs SKU Deep Dive](../03_systems/book_vs_sku.md)
+- [Root Cause Analysis](../02_processes/root_cause_analysis.md)
+- [Shrink Culture and AP Partnership](../02_processes/shrink_culture_and_ap_partnership.md)
+- [IRR Reporting](../03_systems/irr_reporting.md)
+- [FAQ: Why is my Book vs SKU variance so high?](../04_faqs/common_questions.md#why-is-my-book-vs-sku-variance-so-high)
+
+---
+
+**Last Updated:** [Date]  
+**Maintained By:** Retail Operations Team
