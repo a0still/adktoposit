@@ -82,7 +82,7 @@ When users say any of the following, they are referring to the IRR (Inventory Re
     try:
         # Define the Data Store Source
         grounding_source = grounding.VertexAISearch(
-            datastore_id="irr-search-engine",
+            datastore_id="positirr_1764279062880",
             project=PROJECT_ID,
             location="global"
         )
