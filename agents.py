@@ -1,6 +1,7 @@
 # agents.py
 import vertexai
-from vertexai.preview.generative_models import GenerativeModel, Tool
+# Import from 'preview' because 'from_retrieval' might not be in the base class yet
+from vertexai.preview.generative_models import GenerativeModel, Tool, grounding
 import vertexai.preview.generative_models as preview_models
 from langchain.agents import AgentExecutor, initialize_agent, AgentType
 from langchain.memory import ConversationBufferWindowMemory
@@ -91,16 +92,35 @@ When users say any of the following, they are referring to the IRR (Inventory Re
 </context_understanding>
 """
     
-    # TODO: Re-enable grounding once Tool.from_retrieval API is confirmed
-    # For now, create model with just system instruction
-    logger.warning("Vertex AI Search grounding temporarily disabled - using system instruction only")
-    
-    #Initialize Model with the System Prompt (no grounding for now)
-    model = GenerativeModel(
-        "gemini-1.5-pro-002",  # Use 1.5 Pro for best complex reasoning
-        system_instruction=system_prompt  # The XML prompt we wrote
-    )
-    logger.info("GenerativeModel created with system instruction (grounding disabled temporarily)")
+    # Create Vertex AI Search grounding tool using the grounding module
+    try:
+        retrieval_tool = Tool.from_retrieval(
+            retrieval=grounding.Retrieval(
+                source=grounding.VertexAISearch(
+                    datastore_id="positirr_1764279062880",
+                    project=PROJECT_ID,
+                    location="global",
+                )
+            )
+        )
+        logger.info("Retrieval tool created with Vertex AI Search datastore: positirr_1764279062880")
+        
+        # Initialize Model with the Tool and the System Prompt
+        model = GenerativeModel(
+            "gemini-1.5-pro-002",  # Use 1.5 Pro for best complex reasoning
+            tools=[retrieval_tool],  # Connects the Knowledge Base
+            system_instruction=system_prompt  # The XML prompt we wrote
+        )
+        logger.info("GenerativeModel created with Vertex AI Search grounding and system instruction")
+        
+    except AttributeError as e:
+        # Fallback if Tool.from_retrieval still doesn't exist
+        logger.warning(f"Tool.from_retrieval not available: {e}. Creating model without grounding.")
+        model = GenerativeModel(
+            "gemini-1.5-pro-002",
+            system_instruction=system_prompt
+        )
+        logger.info("GenerativeModel created with system instruction only (no grounding)")
     
     return model
 

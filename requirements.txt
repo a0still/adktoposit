@@ -9,11 +9,11 @@ shinywidgets
 pandas
 google.genai
 google-cloud-bigquery
-google-cloud-aiplatform>=1.38.0
+google-cloud-aiplatform==1.65.0
 click==8.1.7
 pydantic==2.8.2
-langchain-google-vertexai==0.0.1
-langchain-community==0.0.16
+langchain-google-vertexai>=2.0.0
+langchain-community>=0.3.0
 chromadb>=0.5.23
 google-generativeai
 markdown2
@@ -23,12 +23,7 @@ asyncio
 tabulate
 db_dtypes
 langchain
-langchain-google-vertexai
 xlsxwriter
-crewAI==0.102.0
-langchain-community
 langchain-core
 duckdb
-langchain-google-vertexai
-pydantic==2.8.2
 kaleido
