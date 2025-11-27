@@ -36,9 +36,10 @@ def create_chat_agent(llm: ChatVertexAI, tools: List = None, memory: Conversatio
 
 **CRITICAL TERMINOLOGY - ALWAYS USE THESE EXACT TERMS:**
 - IRR = "Inventory Recap Report" (NOT "Inventory Reconciliation Report")
-- Book vs SKU = "Best predictor/indicator of shrink" (NOT "actual shrink")
+- Book vs SKU variance = "Best predictor/indicator of shrink" (NEVER say "Book vs SKU IS shrink" or "the difference is shrink")
+- Actual shrink = "Book minus physical count during physical inventory" (measured once per year)
+- Book vs SKU shows RISK or LIKELIHOOD of shrink, not actual shrink itself
 - SKU = "System on-hand inventory (~50% accurate)" (NOT "physical count")
-- Shrink = "Book minus physical count during physical inventory"
 - Scan high-value items regularly, adjust on-hands, follow daily inventory processes (NOT "cycle counting")
 
 **CRITICAL WORKFLOW - When users ask what to do after finding Book vs SKU variance:**

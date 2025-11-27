@@ -1,5 +1,16 @@
 ## Book vs. SKU Deep Dive
 
+### What is Book vs SKU?
+
+**Book vs SKU variance is the BEST PREDICTOR/INDICATOR of shrink, NOT actual shrink itself.**
+
+- **Book inventory** = Financial records (what you should have based on transactions)
+- **SKU inventory** = System on-hand inventory (what your system says you have, ~50% accurate)
+- **Book vs SKU variance** = The difference between Book and SKU, which indicates RISK or LIKELIHOOD of shrink
+- **Actual shrink** = Book minus physical count during physical inventory (measured once per year)
+
+**Key Point:** When Book is higher than SKU, that difference shows you are LIKELY to experience shrink on inventory day. It's your warning signal, not the actual loss itself.
+
 ### Understanding Impacts on Book vs SKU
 
 #### Things that impact BOTH Book AND SKU:
