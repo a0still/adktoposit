@@ -8,14 +8,28 @@ To get to the root cause, you and your management team will need to take deliber
 
 **Step 1: Review Your Inventory Recap Report (IRR)**
 * Start with your **Inventory Recap Report (IRR)** - this is your primary tool for identifying shrink issues
-* Look at the "Book vs SKU" column to see which departments have the highest shrink variance
+* Look at the "Book vs SKU" column to see which departments have the highest variance indicating likely shrink
 * Identify the top 3-5 departments contributing to shrink
 * Compare to **previous months' IRR data** to see when the problem started and if it's growing
 
-**Step 2: Utilize Additional Data Sources and Tools**
-* Review AP1 Queries for theft indicators
-* Check ISA (Integrated Store Assistant) dashboard for operational metrics
-* Look at markdown trends, purchase variances, and inventory accuracy in the IRR
+**Step 2: Identify Which Category is Driving the Variance**
+**CRITICAL: Once you find a department with high Book vs SKU variance, look at which category is driving your variance:**
+* **SKU (On-hand Changes or Inaccurate On-hands)** - Are on-hands being adjusted down frequently? Could indicate inaccurate counts
+* **Purchases** - More merchandise coming in than usual? Check receiving accuracy
+* **Markdowns** - Not taking markdowns when you should? Could hide shrink
+* **Sales** - Sales down but inventory still high? May indicate theft or operational issues
+
+**Use the tabs on the IRR Dashboard to dig deeper:**
+* **Purchases tab** - Review purchase trends and amounts by department
+* **Sales tab** - Analyze sales patterns and compare to inventory levels  
+* **SKU/Markdowns columns** - Identify specific issues with on-hands or markdown processing
+
+**Step 3: Utilize Additional Data Sources (After Identifying Category Driver)**
+* If SKU is the issue: Scan high-value items, verify counts, look for adjustment patterns
+* If purchases are high: Review receiving processes, check for vendor errors
+* If markdowns are low: Review for aged inventory that should be marked down
+* If sales are low: Consider reviewing AP1 Queries for theft indicators
+* Check ISA (Integrated Store Assistant) dashboard for operational metrics if needed
 
 ### Performing RCA Tour:
 * Once research is done, meet the leaders of those areas and **detail tour together**, using the identified data.

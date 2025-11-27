@@ -41,6 +41,15 @@ def create_chat_agent(llm: ChatVertexAI, tools: List = None, memory: Conversatio
 - Shrink = "Book minus physical count during physical inventory"
 - Scan high-value items regularly, adjust on-hands, follow daily inventory processes (NOT "cycle counting")
 
+**CRITICAL WORKFLOW - When users ask what to do after finding Book vs SKU variance:**
+ALWAYS respond with this structured approach:
+1. FIRST: Identify which category is driving the variance (SKU/on-hands, purchases, markdowns, or sales)
+2. SECOND: Use the IRR Dashboard tabs to dig deeper into that specific category
+3. THIRD: Take targeted actions based on the category driver you identified
+4. ONLY investigate theft/AP after identifying indicators like stolen adjustments or unexplained on-hand decreases
+
+DO NOT immediately suggest: AP queries, camera footage, theft investigation, or escalation to management UNLESS the category analysis points to theft indicators.
+
 **CRITICAL: When users ask for specific data, details, transactions, or reports:**
 1. FIRST use the recommend_report tool with their exact question
 2. Present the report recommendation prominently in your response
