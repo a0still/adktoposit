@@ -1,5 +1,8 @@
 ## Aligning Terminology
 
+### IRR (Inventory Recap Report)
+The acronym **"IRR"** stands for **"Inventory Recap Report"**, which is a monthly report that has financial inventory information for each department to be used as a starting point for researching shrink drivers. It shows purchases, sales, markdowns, Book inventory, SKU inventory, and Book vs SKU variance - helping you identify which categories are causing shrink risk in your store. This report should be used to research shrink indicators for further investigation, and is not actual shrink (which is measured during physical inventory).
+
 ### Book Inventory
 The term **"book"** or **"Book Inventory"** is often used interchangeably with **financial inventory**. They mean the same thing.
 

@@ -78,17 +78,52 @@ Book inventory represents the financial record of what inventory SHOULD be in th
 
 ---
 
+### Once I find a Book vs SKU variance for a department, what do I research next?
+
+**Answer:**  
+Once you find a Book vs SKU variance for a department, **look at which category is driving your variance**: SKU (on-hand changes or inaccurate on-hands), purchases, markdowns, or sales. From there, you can use the tabs on the IRR Dashboard to help you dig deeper into the drivers of shrink.
+
+**Step-by-Step Research Process:**
+
+1. **Identify the Category Driver** - Look at the department's data on the IRR:
+   - **SKU variance** - Are on-hands being adjusted down frequently? Could indicate inaccurate counts
+   - **High purchases** - More merchandise coming in than usual? Check receiving accuracy
+   - **Low markdowns** - Not taking markdowns when you should? Could hide shrink
+   - **Low sales** - Sales down but inventory still high? May indicate theft or operational issues
+
+2. **Use the Dashboard Tabs to Dig Deeper**:
+   - **Purchases tab** - Review purchase trends and amounts by department
+   - **Sales tab** - Analyze sales patterns and compare to inventory levels
+   - **SKU/Markdowns columns** - Identify specific issues with on-hands or markdown processing
+
+3. **Take Targeted Actions Based on What You Find**:
+   - If **SKU (on-hands) is the issue** → Scan high-value items, verify counts, look for adjustment patterns
+   - If **purchases are high** → Review receiving processes, check for vendor errors
+   - If **markdowns are low** → Review for aged inventory that should be marked down
+   - If **sales are low** → Investigate potential theft or operational issues
+
+**Why This Approach Works:**  
+By identifying the category driver first, you focus your efforts on the actual problem instead of investigating everything at once. This leads to faster resolution and less frustration.
+
+**When to Investigate Theft:**  
+Only after you've identified indicators like:
+- Stolen adjustments in on-hand changes
+- On-hands consistently being adjusted down without explanation
+- High-value items with unexplained disappearances
+- Then review AP reports and camera footage
+
+---
+
 ### Why is my Book vs SKU variance so high?
 
 **Answer:**  
-High Book vs SKU variance on your **Inventory Recap Report (IRR)** indicates significant shrink risk in your store or department. Start by reviewing the IRR to identify which specific departments are driving the variance. Common causes include theft (external or internal), inventory inaccuracy (counting errors, on-hand adjustments), receiving errors, markdown mistakes, or failure to process damaged merchandise properly.
+High Book vs SKU variance on your **Inventory Recap Report (IRR)** indicates significant shrink risk in your store or department. **First, identify which category is driving the variance** (SKU, purchases, markdowns, or sales) before taking action.
 
 **Investigation Steps:**
-1. **Review your IRR Dashboard** - Identify which departments show the highest Book vs SKU variance, review the AI insights for support.
-2. **Check for theft patterns** - Review AP reports and camera footage for high-shrink items in those departments
-3. **Review inventory accuracy** - Compare recent scans of high-value items, look for on-hand adjustment patterns
-4. **Audit recent transactions** - Check markdowns, receiving, and transfers for errors in affected departments
-5. **Review high-value items** - Use the IRR to focus on expensive items that impact dollars significantly
+1. **Identify the category driver** - Look at SKU changes, purchases, markdowns, and sales to see which is causing the variance
+2. **Use the IRR Dashboard tabs** - Dig deeper into the specific category causing the issue
+3. **Review the AI insights** - Check for patterns and recommendations on the dashboard
+4. **Take targeted action** - Focus on the specific driver (on-hands, receiving, markdowns, etc.) rather than investigating everything
 
 **Common Causes:**
 - Shoplifting in high-risk departments (Electronics, Cosmetics, etc.)
@@ -268,7 +303,7 @@ Only adjust inventory when you have identified a legitimate discrepancy through 
 ### What is the IRR report?
 
 **Answer:**  
-The Inventory Recap Report (IRR) is a monthly financial report that shows your store's inventory performance, including purchases, sales, markdowns, Book inventory, SKU inventory, and Book vs SKU variance. It's the primary tool for monitoring shrink and inventory health.
+The IRR (Inventory Recap Report) is a monthly report that has financial inventory information for each department to be used as a starting point for researching shrink drivers. It shows purchases, sales, markdowns, Book inventory, SKU inventory, and Book vs SKU variance - helping you identify which categories are causing shrink risk in your store.
 
 **Key Components:**
 - **Purchases** - Merchandise bought (finalized invoices)
