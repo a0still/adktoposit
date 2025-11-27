@@ -1,6 +1,6 @@
 # agents.py
 import vertexai
-from vertexai.preview.generative_models import GenerativeModel, Tool, grounding
+from vertexai.preview.generative_models import GenerativeModel, Tool
 import vertexai.preview.generative_models as preview_models
 from langchain.agents import AgentExecutor, initialize_agent, AgentType
 from langchain.memory import ConversationBufferWindowMemory
