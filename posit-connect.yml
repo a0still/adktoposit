@@ -1,0 +1,11 @@
+---
+title: "ADK Chat Interface"
+python:
+  version: "3.11.11"
+  package-manager: pip
+environment:
+  - GOOGLE_APPLICATION_CREDENTIALS=key.json
+  - GCP_PROJECT=wmt-us-gg-shrnk-prod
+  - VERTEX_LOCATION=us-central1
+  - VERTEX_MODEL=gemini-1.5-pro-002
+  - PORT=8080
