@@ -17,7 +17,7 @@ report_recommender = ReportRecommender()
 
 # Configuration - Pull from Env or use defaults
 PROJECT_ID = os.getenv('GCP_PROJECT', 'wmt-us-gg-shrnk-prod')
-DATA_STORE_ID = "positirr_1764279062880"  # Your specific Data Store ID
+DATA_STORE_ID = "irr-search-engine"  # Your specific Data Store ID (APP ID from GCP)
 LOCATION = "global"  # Agent Builder stores are usually global
 
 # Initialize BigQuery client
