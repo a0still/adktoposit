@@ -34,9 +34,9 @@ Each section builds on the previous ones, so it's recommended to start with the 
 **If you're new and want to research shrink in your store, start here:**
 
 1. **Review your Inventory Recap Report (IRR)** - This is your primary tool for investigating shrink
-   - Look at the "Book vs SKU" column - this shows your shrink by department
+   - Look at the "Book vs SKU" column - this shows shrink indicators for further research by department
    - Identify which departments have the highest variance (where Book is higher than SKU)
-   - Focus on the top 3-5 departments contributing to shrink
+   - Focus on the top 3-5 departments with highest shrink indicators
 
 2. **Understand what you're seeing** - Read [Shrink Definition](01_core_concepts/shrink_definition.md) and [Book vs SKU](03_systems/book_vs_sku.md)
 

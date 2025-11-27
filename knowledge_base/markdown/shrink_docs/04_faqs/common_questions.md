@@ -5,16 +5,17 @@
 ### What is shrink?
 
 **Answer:**  
-Shrink refers to the loss of inventory between what is recorded (Book inventory) and what is physically available (SKU inventory). In retail, shrink represents financial losses due to missing merchandise, theft, damaged goods, or errors in inventory management.
+Shrink refers to the loss of inventory between what is recorded (Book inventory) and what is physically counted (During annual inventory). In retail, shrink represents financial losses due to missing merchandise, theft, damaged goods, or errors in inventory management.
 
 **Where to See It:**  
-Review your **Inventory Recap Report (IRR)** - shrink appears as the "Book vs SKU" variance. When Book (what you should have) is higher than SKU (what you actually have), that difference is your shrink.
+Review your **Inventory Recap Report (IRR)** - shrink indicators can be variances such as the "Book vs SKU" variance, markdowns higher or lower than normal or purchases higher or lower than normal. When Book inventory is higher than SKU (system on-hand) inventory, that difference is your most likely indicator that a store will shrink. The IRR shows shrink indicators for further research by department (book, sku, markdowns, purchases and sales), helping you identify where losses are likely occurring.
 
 **Key Points:**
-- Shrink is measured as the difference between Book and SKU inventory values shown on the IRR
+- Shrink is measured during physical inventory as the difference between Book and actual physical count
+- Book vs SKU variance is the best monthly indicator/predictor of shrink
 - Main causes include theft (internal and external), administrative errors, vendor fraud, and damaged merchandise
 - Shrink directly impacts profitability and store performance metrics
-- The IRR Dashboard shows shrink by department, helping you identify problem areas
+- The IRR Dashboard shows shrink indicators for further research by department (book vs sku, markdowns, purchases and sales), helping you identify problem areas
 
 **Related Topics:** [Shrink Definition](../01_core_concepts/shrink_definition.md), [Book vs SKU](../03_systems/book_vs_sku.md), [IRR Reporting](../03_systems/irr_reporting.md)
 
@@ -39,12 +40,12 @@ The four main causes of shrink are: 1) External theft (shoplifting), 2) Internal
 ### How do I reduce shrink in my store?
 
 **Answer:**  
-To investigate shrink causes, partner with your supervisor/sponsor and start your research using the **Inventory Recap Report (IRR)** to help identify what is driving your shrink growth. Look into things like missing merchandise due to shortage or theft, improper financial transactions like inaccurate price changes or billing, understated markdowns, and inaccurate inventory counts.
+To investigate shrink causes, partner with your supervisor/sponsor and start your research using the **Inventory Recap Report (IRR)** to help identify what is driving your shrink growth. Focus on departments with high Book vs SKU variance, low markdowns, high purchases, or low sales.
 
 **Steps:**
-1. **Review your Inventory Recap Report (IRR)** - Identify departments with highest Book vs SKU variance (your shrink)
+1. **Review your Inventory Recap Report (IRR)** - Identify departments with highest Book vs SKU variance (your best shrink predictor)
 2. **Analyze by department** - Focus on the top 3-5 departments contributing to shrink
-3. **Improve inventory accuracy** - Conduct regular cycle counts and on-hand audits in high-shrink areas
+3. **Improve inventory accuracy** - Look at your purchases and markdowns columns first to see if they are higher or lower than normal.
 4. **Partner with Asset Protection** - Share IRR results and address external and internal theft proactively
 5. **Train associates** - Ensure proper procedures for markdowns, receiving, and inventory adjustments
 6. **Monitor key IRR metrics** - Track Book vs SKU, markdown dollars, and purchase variance monthly
@@ -65,14 +66,13 @@ To investigate shrink causes, partner with your supervisor/sponsor and start you
 ### What is Book vs SKU?
 
 **Answer:**  
-Book inventory represents the financial record of what inventory SHOULD be in the store based on purchases, sales, and transactions. SKU inventory represents the physical count of what IS actually in the store. The difference between these two values is your shrink.
+Book inventory represents the financial record of what inventory SHOULD be in the store based on purchases, sales, and transactions. SKU inventory represents the system onhand amounts of what IS actually in the store.  The difference between Book and SKU is the best predictor of shrink. Actual shrink is measured during physical inventory as the difference between Book and the physical count.
 
 **Key Points:**
 - Book = Financial records (what you should have)
-- SKU = Physical inventory (what you actually have)
-- Book vs SKU variance = Shrink (losses)
-- Positive variance = Book is higher than SKU (typical - indicates losses)
-- Negative variance = SKU is higher than Book (investigate - may indicate receiving or counting errors)
+- SKU = System on-hand inventory (what your system says you have, ~50% accurate)
+- Book vs SKU variance = Best predictor/indicator of shrink
+- Actual shrink = Book minus physical count (measured during physical inventory)
 
 **Related Topics:** [Book vs SKU Deep Dive](../03_systems/book_vs_sku.md)
 
@@ -81,10 +81,10 @@ Book inventory represents the financial record of what inventory SHOULD be in th
 ### Why is my Book vs SKU variance so high?
 
 **Answer:**  
-High Book vs SKU variance on your **Inventory Recap Report (IRR)** indicates significant shrink in your store or department. Start by reviewing the IRR to identify which specific departments are driving the variance. Common causes include theft (external or internal), inventory inaccuracy (counting errors, on-hand adjustments), receiving errors, markdown mistakes, or failure to process damaged merchandise properly.
+High Book vs SKU variance on your **Inventory Recap Report (IRR)** indicates significant shrink risk in your store or department. Start by reviewing the IRR to identify which specific departments are driving the variance. Common causes include theft (external or internal), inventory inaccuracy (counting errors, on-hand adjustments), receiving errors, markdown mistakes, or failure to process damaged merchandise properly.
 
 **Investigation Steps:**
-1. **Review your IRR Dashboard** - Identify which departments show the highest Book vs SKU variance
+1. **Review your IRR Dashboard** - Identify which departments show the highest Book vs SKU variance, review the AI insights for support.
 2. **Check for theft patterns** - Review AP reports and camera footage for high-shrink items in those departments
 3. **Review inventory accuracy** - Compare recent cycle counts, look for on-hand adjustment patterns
 4. **Audit recent transactions** - Check markdowns, receiving, and transfers for errors in affected departments
@@ -275,8 +275,8 @@ The Inventory Recap Report (IRR) is a monthly financial report that shows your s
 - **Sales** - Merchandise sold to customers
 - **Markdowns** - Price reductions taken
 - **Book** - Financial inventory (what you should have)
-- **SKU** - Physical inventory (what you actually have)
-- **Book vs SKU** - Your shrink (the difference)
+- **SKU** - Physical inventory (what the system onhands say you have)
+- **Book vs SKU** - Your best shrink indicator (the difference between financial records and system on-hands)
 
 **How to Use It:**
 - Review monthly with your team
