@@ -1120,10 +1120,27 @@ def server(input: Inputs, output: Outputs, session: Session):
                 raise ValueError(f"Credentials file not found at {credentials_path}")
             
             try:
-                # Initialize Vertex AI chat with better error handling
-                logger.info(f"Initializing Vertex AI chat for project {gcp_project}...")
+                # Initialize Vertex AI with grounding using the new recommended approach
+                logger.info(f"Initializing Vertex AI with grounding for project {gcp_project}...")
                 
-                # Configure safety settings to be less restrictive for business questions
+                from agents import create_grounded_model, create_chat_agent
+                
+                # Create the grounded model with Vertex AI Search datastore
+                grounded_model = create_grounded_model()
+                logger.info("Grounded model created successfully with Vertex AI Search")
+                
+                # Create conversation memory for this session
+                from langchain.memory import ConversationBufferWindowMemory
+                memory = ConversationBufferWindowMemory(
+                    k=5,  # Keep last 5 exchanges
+                    memory_key="chat_history",
+                    return_messages=True,
+                    output_key="output"
+                )
+                logger.info("Created conversation memory (5-message window)")
+                
+                # For compatibility with existing chat handler, we still use LangChain wrapper
+                # But the grounded model will be used for knowledge retrieval
                 from google.generativeai.types import HarmCategory, HarmBlockThreshold
                 
                 safety_settings = {
@@ -1136,42 +1153,29 @@ def server(input: Inputs, output: Outputs, session: Session):
                 llm = ChatVertexAI(
                     project=gcp_project,
                     location=vertex_location,
-                    model_name=vertex_model,
+                    model_name="gemini-1.5-pro-002",
                     temperature=0.7,
                     max_retries=3,
                     request_timeout=120,
                     safety_settings=safety_settings
                 )
                 
-                logger.info(f"Vertex AI chat initialized successfully with relaxed safety settings for project {gcp_project}")
+                logger.info("LangChain wrapper created for agent compatibility")
                 
-                # Test the LLM with a simple prompt
-                logger.info("Testing LLM with simple prompt...")
-                test_response = llm.invoke("Say 'Hello'")
-                logger.info(f"LLM test response received: {str(test_response)[:100]}...")
-                
-                # Create conversation memory for this session
-                from langchain.memory import ConversationBufferWindowMemory
-                memory = ConversationBufferWindowMemory(
-                    k=5,  # Keep last 5 exchanges
-                    memory_key="chat_history",
-                    return_messages=True,
-                    output_key="output"
-                )
-                logger.info("Created conversation memory (5-message window)")
-                
-                # Initialize chat agent with knowledge retrieval and report recommendation tools
-                logger.info("Initializing chat agent with memory and report recommendations...")
-                from tools import retrieve_knowledge, recommend_report
-                chat_agent = create_chat_agent(llm, tools=[retrieve_knowledge, recommend_report], memory=memory)
+                # Initialize chat agent with only report recommendation tool
+                # Knowledge retrieval is handled by the grounded model
+                logger.info("Initializing chat agent with report recommendations...")
+                from tools import recommend_report
+                chat_agent = create_chat_agent(llm, tools=[recommend_report], memory=memory)
                 logger.info("Chat agent created with memory and report recommendation capability")
                 
-                # Store in session for reuse
-                session.chat_agent = chat_agent
+                # Store both in session for reuse
+                session.grounded_model = grounded_model  # The Vertex AI Search grounded model
+                session.chat_agent = chat_agent  # LangChain agent for tools and memory
                 session.chat_memory = memory  # Store memory separately for access
                 session.initialized = True
                 
-                logger.info("Chat agent initialized and stored in session successfully")
+                logger.info("Chat system initialized successfully with Vertex AI Search grounding")
                 
             except Exception as e:
                 logger.error(f"Error during LLM/Agent initialization: {str(e)}", exc_info=True)
