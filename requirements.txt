@@ -4,6 +4,7 @@ google-cloud-discoveryengine>=0.11.0
 
 # LangChain Google connector (Must be compatible with the SDK above)
 langchain-google-vertexai>=2.0.0
+langchain-google-community>=2.0.0
 langchain>=0.3.0
 langchain-community>=0.3.0
 
@@ -17,7 +18,7 @@ markdown2
 
 # Additional dependencies for the app
 google-cloud-bigquery
-chromadb>=0.5.23
+chromadb
 db_dtypes
 pyarrow
 xlsxwriter

@@ -4,7 +4,8 @@ import logging
 from typing import List, Optional
 from langchain.tools import tool
 # We switch from Chroma (Local) to Vertex AI Search (Cloud)
-from langchain_google_vertexai import VertexAISearchRetriever
+# NEW / CORRECT - VertexAISearchRetriever is in langchain-google-community
+from langchain_google_community import VertexAISearchRetriever
 from google.cloud import bigquery
 from src.report_recommender import ReportRecommender
 
