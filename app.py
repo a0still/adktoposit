@@ -1162,12 +1162,12 @@ def server(input: Inputs, output: Outputs, session: Session):
                 
                 logger.info("LangChain wrapper created for agent compatibility")
                 
-                # Initialize chat agent with only report recommendation tool
-                # Knowledge retrieval is handled by the grounded model
-                logger.info("Initializing chat agent with report recommendations...")
-                from tools import recommend_report
-                chat_agent = create_chat_agent(llm, tools=[recommend_report], memory=memory)
-                logger.info("Chat agent created with memory and report recommendation capability")
+                # Initialize chat agent with knowledge retrieval and report recommendation tools
+                # Note: Grounding temporarily disabled, using retrieve_knowledge tool instead
+                logger.info("Initializing chat agent with knowledge retrieval and report recommendations...")
+                from tools import retrieve_knowledge, recommend_report
+                chat_agent = create_chat_agent(llm, tools=[retrieve_knowledge, recommend_report], memory=memory)
+                logger.info("Chat agent created with memory, knowledge retrieval, and report recommendation capability")
                 
                 # Store both in session for reuse
                 session.grounded_model = grounded_model  # The Vertex AI Search grounded model

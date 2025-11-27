@@ -13,17 +13,17 @@ logger = logging.getLogger('adk_chat.agents')
 
 def create_grounded_model():
     """
-    Creates a Vertex AI GenerativeModel with Vertex AI Search grounding.
-    This follows Vertex AI's recommended approach for connecting to a Data Store.
+    Creates a Vertex AI GenerativeModel with system instruction.
+    Grounding temporarily disabled due to API compatibility issues.
     
     Returns:
-        GenerativeModel configured with retrieval tool and system instruction
+        GenerativeModel configured with system instruction
     """
     # Get configuration from environment variables
     PROJECT_ID = os.getenv('GCP_PROJECT', 'wmt-us-gg-shrnk-prod')
     LOCATION = os.getenv('VERTEX_LOCATION', 'us-central1')
     
-    logger.info(f"Initializing Vertex AI with grounding for project {PROJECT_ID}...")
+    logger.info(f"Initializing Vertex AI for project {PROJECT_ID}...")
     
     # Initialize Vertex AI
     vertexai.init(project=PROJECT_ID, location=LOCATION)
@@ -91,25 +91,16 @@ When users say any of the following, they are referring to the IRR (Inventory Re
 </context_understanding>
 """
     
-    # 1. Define the Retrieval Tool using the Vertex AI Search Data Store
-    retrieval_tool = Tool.from_retrieval(
-        retrieval=preview_models.grounding.Retrieval(
-            source=preview_models.grounding.VertexAISearch(
-                datastore_id="positirr_1764279062880",  # Your Data Store ID
-                project=PROJECT_ID,
-                location="global",  # Data Stores are often 'global' by default in Agent Builder
-            )
-        )
-    )
-    logger.info("Retrieval tool created with Vertex AI Search datastore: positirr_1764279062880")
+    # TODO: Re-enable grounding once Tool.from_retrieval API is confirmed
+    # For now, create model with just system instruction
+    logger.warning("Vertex AI Search grounding temporarily disabled - using system instruction only")
     
-    # 2. Initialize Model with the Tool and the System Prompt
+    #Initialize Model with the System Prompt (no grounding for now)
     model = GenerativeModel(
         "gemini-1.5-pro-002",  # Use 1.5 Pro for best complex reasoning
-        tools=[retrieval_tool],  # Connects the Knowledge Base
         system_instruction=system_prompt  # The XML prompt we wrote
     )
-    logger.info("GenerativeModel created with grounding and system instruction")
+    logger.info("GenerativeModel created with system instruction (grounding disabled temporarily)")
     
     return model
 
