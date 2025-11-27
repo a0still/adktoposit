@@ -1,8 +1,8 @@
 # agents.py
 import vertexai
 from vertexai.generative_models import GenerativeModel, Tool, HarmCategory, HarmBlockThreshold
-# Grounding (VertexAISearch) is still in preview namespace in SDK 1.72.0
-from vertexai.preview import generative_models as preview_models
+# IMPORT GROUNDING FROM PREVIEW (This fixes the 'no attribute VertexAISearch' error)
+from vertexai.preview.generative_models import grounding
 from langchain.agents import AgentExecutor, initialize_agent, AgentType
 from langchain.memory import ConversationBufferWindowMemory
 from typing import List
@@ -80,20 +80,20 @@ When users say any of the following, they are referring to the IRR (Inventory Re
     tools_list = []
     
     try:
-        # VertexAISearch is in preview namespace in SDK 1.72.0
-        grounding_source = preview_models.grounding.VertexAISearch(
+        # Define the Data Store Source
+        grounding_source = grounding.VertexAISearch(
             datastore_id="positirr_1764279062880",
             project=PROJECT_ID,
             location="global"
         )
         
-        # Create the tool
+        # Define the Tool using the source
         retrieval_tool = Tool.from_retrieval(
-            retrieval=preview_models.grounding.Retrieval(source=grounding_source)
+            retrieval=grounding.Retrieval(source=grounding_source)
         )
         
         tools_list = [retrieval_tool]
-        logger.info("Retrieval tool created with Vertex AI Search datastore")
+        logger.info("Retrieval tool created successfully with Vertex AI Search")
         
     except Exception as e:
         logger.warning(f"Failed to create grounding tool: {e}. Creating model without grounding.")
