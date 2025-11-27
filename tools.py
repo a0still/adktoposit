@@ -31,11 +31,11 @@ try:
     retriever = VertexAISearchRetriever(
         project_id=PROJECT_ID,
         location_id=LOCATION,
-        data_store_id=DATA_STORE_ID,
+        engine_id=DATA_STORE_ID,  # Use engine_id for Search Engine Apps
         max_documents=3,
         engine_data_type=0  # 0 = Unstructured (your markdown files)
     )
-    logger.info(f"Vertex AI Search Retriever initialized for store: {DATA_STORE_ID}")
+    logger.info(f"Vertex AI Search Retriever initialized for engine: {DATA_STORE_ID}")
 except Exception as e:
     logger.error(f"Error initializing Vertex AI Search: {str(e)}")
     retriever = None
