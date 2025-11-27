@@ -99,13 +99,16 @@ When users say any of the following, they are referring to the IRR (Inventory Re
         logger.warning(f"Failed to create grounding tool: {e}. Creating model without grounding.")
         tools_list = []
 
+    # Get model name from env, default to stable 1.5 pro
+    model_name = os.getenv('VERTEX_MODEL', 'gemini-1.5-pro')
+    
     # Initialize Model
     model = GenerativeModel(
-        "gemini-1.5-pro-002",
+        model_name,
         tools=tools_list,
         system_instruction=system_prompt
     )
-    logger.info(f"GenerativeModel created with {len(tools_list)} tool(s)")
+    logger.info(f"GenerativeModel '{model_name}' created with {len(tools_list)} tool(s)")
     
     return model
 

@@ -1100,7 +1100,7 @@ def server(input: Inputs, output: Outputs, session: Session):
             # Set default values for critical environment variables
             gcp_project = os.getenv('GCP_PROJECT', 'wmt-us-gg-shrnk-prod')
             vertex_location = os.getenv('VERTEX_LOCATION', 'us-central1')
-            vertex_model = os.getenv('VERTEX_MODEL', 'gemini-pro')
+            vertex_model = os.getenv('VERTEX_MODEL', 'gemini-1.5-pro')
             credentials_path = os.getenv('GOOGLE_APPLICATION_CREDENTIALS', 'key.json')
             
             # Ensure environment variables are set
@@ -1151,7 +1151,7 @@ def server(input: Inputs, output: Outputs, session: Session):
                 llm = ChatVertexAI(
                     project=gcp_project,
                     location=vertex_location,
-                    model_name="gemini-1.5-pro-002",
+                    model_name=vertex_model,
                     temperature=0.7,
                     max_retries=3,
                     request_timeout=120,
