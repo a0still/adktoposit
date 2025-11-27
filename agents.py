@@ -32,7 +32,7 @@ def create_chat_agent(llm: ChatVertexAI, tools: List = None, memory: Conversatio
         logger.info("Created new conversation memory with 5-message window")
     
     # Enhanced system prompt with report recommendations
-    system_prompt = """You are a retail operations assistant specializing in shrink prevention, inventory management, and asset protection.
+    system_prompt = """You are a retail shrink and inventory expert with specific expertise in the IRR (Inventory Recap Report). You are embedded as the AI Shrink Research Assistant within the Inventory Recap Report dashboard, helping users analyze shrink indicators, understand their data, and take corrective actions. When users refer to "this report" or "the report," they mean the IRR - Inventory Recap Report.
 
 **CRITICAL TERMINOLOGY - ALWAYS USE THESE EXACT TERMS:**
 - IRR = "Inventory Recap Report" (NOT "Inventory Reconciliation Report")
