@@ -1,29 +1,21 @@
-uvicorn==0.34.0
-fastapi==0.109.1
-shiny>=1.1.0
-python-dotenv
-faicons
-plotly
-numpy
+# Core Google Cloud SDK (Forces Gemini 1.5/2.0 support)
+google-cloud-aiplatform==1.72.0
+
+# LangChain Google connector (Must be compatible with the SDK above)
+langchain-google-vertexai>=2.0.0
+langchain>=0.3.0
+
+# Shiny and visualization
+shiny
 shinywidgets
 pandas
-google.genai
-google-cloud-bigquery
-google-cloud-aiplatform==1.65.0
-click==8.1.7
-pydantic==2.8.2
-langchain-google-vertexai>=2.0.0
-langchain-community>=0.3.0
-chromadb>=0.5.23
-google-generativeai
+plotly
+python-dotenv
 markdown2
-openpyxl
-chatlas
-asyncio
-tabulate
+
+# Additional dependencies for the app
+google-cloud-bigquery
+chromadb>=0.5.23
 db_dtypes
-langchain
 xlsxwriter
-langchain-core
-duckdb
-kaleido
+tabulate

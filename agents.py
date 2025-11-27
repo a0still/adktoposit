@@ -1,8 +1,7 @@
 # agents.py
 import vertexai
-# Import from 'preview' because 'from_retrieval' might not be in the base class yet
-from vertexai.preview.generative_models import GenerativeModel, Tool, grounding
-import vertexai.preview.generative_models as preview_models
+# With SDK 1.72.0, we can use the standard namespace safely
+from vertexai.generative_models import GenerativeModel, Tool, grounding
 from langchain.agents import AgentExecutor, initialize_agent, AgentType
 from langchain.memory import ConversationBufferWindowMemory
 from typing import List
@@ -14,23 +13,19 @@ logger = logging.getLogger('adk_chat.agents')
 
 def create_grounded_model():
     """
-    Creates a Vertex AI GenerativeModel with system instruction.
-    Grounding temporarily disabled due to API compatibility issues.
+    Creates a Vertex AI GenerativeModel with Vertex AI Search grounding.
+    Simplified approach per Vertex recommendations for SDK 1.72.0.
     
     Returns:
-        GenerativeModel configured with system instruction
+        GenerativeModel configured with grounding and system instruction
     """
-    # Get configuration from environment variables
     PROJECT_ID = os.getenv('GCP_PROJECT', 'wmt-us-gg-shrnk-prod')
     LOCATION = os.getenv('VERTEX_LOCATION', 'us-central1')
     
-    logger.info(f"Initializing Vertex AI for project {PROJECT_ID}...")
-    
-    # Initialize Vertex AI
     vertexai.init(project=PROJECT_ID, location=LOCATION)
-    logger.info("Vertex AI initialized")
+    logger.info(f"Vertex AI initialized for project {PROJECT_ID}")
     
-    # Define the system prompt (same as used in agent)
+    # Define the system prompt
     system_prompt = """
 <role>
 You are the AI Shrink Research Assistant embedded within the "Inventory Recap Report" (IRR) dashboard. Your goal is to help users analyze shrink indicators, understand their data, and take corrective actions. You act as a senior retail analyst: professional, data-driven, and precise.
@@ -92,35 +87,32 @@ When users say any of the following, they are referring to the IRR (Inventory Re
 </context_understanding>
 """
     
-    # Create Vertex AI Search grounding tool using the grounding module
+    # Define the grounding tool
+    # In SDK 1.72.0, this syntax is standard
     try:
+        grounding_source = grounding.VertexAISearch(
+            datastore_id="positirr_1764279062880",
+            project=PROJECT_ID,
+            location="global"
+        )
+        
         retrieval_tool = Tool.from_retrieval(
-            retrieval=grounding.Retrieval(
-                source=grounding.VertexAISearch(
-                    datastore_id="positirr_1764279062880",
-                    project=PROJECT_ID,
-                    location="global",
-                )
-            )
+            retrieval=grounding.Retrieval(source=grounding_source)
         )
-        logger.info("Retrieval tool created with Vertex AI Search datastore: positirr_1764279062880")
         
-        # Initialize Model with the Tool and the System Prompt
-        model = GenerativeModel(
-            "gemini-1.5-pro-002",  # Use 1.5 Pro for best complex reasoning
-            tools=[retrieval_tool],  # Connects the Knowledge Base
-            system_instruction=system_prompt  # The XML prompt we wrote
-        )
-        logger.info("GenerativeModel created with Vertex AI Search grounding and system instruction")
-        
-    except AttributeError as e:
-        # Fallback if Tool.from_retrieval still doesn't exist
-        logger.warning(f"Tool.from_retrieval not available: {e}. Creating model without grounding.")
-        model = GenerativeModel(
-            "gemini-1.5-pro-002",
-            system_instruction=system_prompt
-        )
-        logger.info("GenerativeModel created with system instruction only (no grounding)")
+        tools_list = [retrieval_tool]
+        logger.info("Grounding tool created successfully")
+    except Exception as e:
+        logger.error(f"Failed to create grounding tool: {e}")
+        tools_list = []
+    
+    # Initialize Model
+    model = GenerativeModel(
+        "gemini-1.5-pro-002",
+        tools=tools_list,
+        system_instruction=system_prompt
+    )
+    logger.info(f"GenerativeModel created with {len(tools_list)} tool(s)")
     
     return model
 
