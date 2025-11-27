@@ -2,7 +2,7 @@
 
 ## Problem Statement
 
-Your department or store shows a significant Book vs SKU variance, meaning your physical inventory (SKU) is lower than your financial records (Book). This indicates shrink - loss of inventory that's impacting your profitability.
+Your department or store shows a significant Book vs SKU variance, meaning your system on-hand inventory (SKU) is lower than your financial records (Book). This indicates a high likelihood of shrink - loss of inventory that's impacting your profitability. Note: SKU represents system on-hands (~50% accurate), not physical counts.
 
 **What This Means:**
 - Missing merchandise that you paid for
@@ -43,10 +43,10 @@ Your department or store shows a significant Book vs SKU variance, meaning your 
 ### 3. **Inventory Inaccuracy (Counting Errors)**
 
 **Why it happens:**
-- Poor cycle counting practices
+- Not scanning high-value items regularly
 - Not investigating discrepancies before adjusting
 - Associates unfamiliar with proper procedures
-- Rushing through counts
+- Not following daily inventory processes
 
 **How to identify it:**
 - Frequent on-hand adjustments
@@ -105,7 +105,7 @@ Your department or store shows a significant Book vs SKU variance, meaning your 
 ### Step 2: Physical Verification
 
 **What to check:**
-- Cycle count high-value items in affected departments
+- Scan high-value items in affected departments and verify counts
 - Verify on-hand accuracy for top contributors
 - Check for merchandise in wrong locations
 
@@ -160,7 +160,7 @@ Your department or store shows a significant Book vs SKU variance, meaning your 
 **What to check:**
 - Are associates following proper procedures?
 - Have they noticed anything unusual?
-- Do they understand cycle counting, markdowns, receiving?
+- Do they understand scanning processes, markdowns, receiving?
 - Are there operational issues they've identified?
 
 **Where to look:**
@@ -186,8 +186,8 @@ Your department or store shows a significant Book vs SKU variance, meaning your 
    - Implement merchandise placement changes
 
 2. **Enhance monitoring**
-   - Increase cycle count frequency for high-risk items
-   - Implement daily counts for top 10 shrink items
+   - Scan high-risk items more frequently
+   - Implement daily scans and on-hand verification for top 10 shrink items
    - Review camera footage proactively
 
 3. **Expected outcome**
@@ -214,9 +214,9 @@ Your department or store shows a significant Book vs SKU variance, meaning your 
 
 ### If Cause is Inventory Inaccuracy:
 
-1. **Improve counting practices**
-   - Retrain associates on cycle counting
-   - Implement double-count verification for high-value items
+1. **Improve inventory practices**
+   - Retrain associates on scanning high-value items and adjusting on-hands
+   - Implement verification for high-value items
    - Require investigation before adjustments
 
 2. **Increase accountability**
@@ -269,10 +269,10 @@ Your department or store shows a significant Book vs SKU variance, meaning your 
 
 ### Ongoing Best Practices:
 
-1. **Regular Cycle Counting**
-   - Daily counts for high-value, high-theft items
-   - Weekly counts for medium-risk items
-   - Monthly counts for low-risk items
+1. **Regular Scanning of High-Value/High-Theft Items**
+   - Daily scans for high-value, high-theft items with on-hand adjustments as needed
+   - Ensure daily inventory processes are followed consistently
+   - Focus on items that drive the most dollar variance
 
 2. **Monitor Key Metrics**
    - Review IRR report monthly
@@ -286,7 +286,7 @@ Your department or store shows a significant Book vs SKU variance, meaning your 
 
 4. **Train Your Team**
    - Ensure all associates understand procedures
-   - Provide ongoing training on cycle counting, receiving, markdowns
+   - Provide ongoing training on scanning items, receiving, markdowns
    - Create culture of accountability
 
 5. **Investigate Promptly**

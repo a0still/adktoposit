@@ -86,14 +86,14 @@ High Book vs SKU variance on your **Inventory Recap Report (IRR)** indicates sig
 **Investigation Steps:**
 1. **Review your IRR Dashboard** - Identify which departments show the highest Book vs SKU variance, review the AI insights for support.
 2. **Check for theft patterns** - Review AP reports and camera footage for high-shrink items in those departments
-3. **Review inventory accuracy** - Compare recent cycle counts, look for on-hand adjustment patterns
+3. **Review inventory accuracy** - Compare recent scans of high-value items, look for on-hand adjustment patterns
 4. **Audit recent transactions** - Check markdowns, receiving, and transfers for errors in affected departments
 5. **Review high-value items** - Use the IRR to focus on expensive items that impact dollars significantly
 
 **Common Causes:**
 - Shoplifting in high-risk departments (Electronics, Cosmetics, etc.)
 - Internal theft or merchandise use
-- On-hand count errors during cycle counts
+- On-hand count errors when scanning items
 - Receiving errors (not checking in merchandise properly)
 - Markdown errors (taking markdowns without proper justification)
 - Damaged merchandise not processed correctly
@@ -217,10 +217,10 @@ Take markdowns when merchandise is damaged, defective, seasonal and approaching 
 ### How do I improve on-hand accuracy?
 
 **Answer:**  
-Improve on-hand accuracy through consistent cycle counting, proper receiving procedures, accurate markdown processing, immediate processing of damaged merchandise, training associates on proper procedures, and investigating discrepancies promptly.
+Improve on-hand accuracy through scanning high-value or high-theft items regularly, proper receiving procedures, accurate markdown processing, immediate processing of damaged merchandise, training associates on proper procedures, and investigating discrepancies promptly.
 
 **Best Practices:**
-1. **Cycle count regularly** - Daily or weekly for high-value/high-theft items
+1. **Scan high-value/high-theft items regularly** - Adjust on-hands as needed and ensure daily inventory processes are followed
 2. **Verify at receiving** - Count everything that comes in, don't trust BOL
 3. **Process changes immediately** - Don't delay adjustments, markdowns, or damages
 4. **Train your team** - Ensure everyone knows proper procedures
@@ -228,7 +228,7 @@ Improve on-hand accuracy through consistent cycle counting, proper receiving pro
 6. **Use tools correctly** - Handheld devices, inventory management systems
 
 **Common Issues:**
-- Not counting accurately during cycle counts
+- Not scanning high-value items regularly or adjusting on-hands accurately
 - Delaying processing of markdowns or damaged items
 - Not verifying receiving quantities
 - Associates adjusting on-hands without investigation
@@ -241,10 +241,10 @@ Improve on-hand accuracy through consistent cycle counting, proper receiving pro
 ### How often should I adjust inventory?
 
 **Answer:**  
-Only adjust inventory when you have identified a legitimate discrepancy through cycle counting or investigation. Never adjust on-hands to "fix" reports or meet targets. Every adjustment should be documented with a clear reason.
+Only adjust inventory when you have identified a legitimate discrepancy through scanning items or investigation. Never adjust on-hands to "fix" reports or meet targets. Every adjustment should be documented with a clear reason.
 
 **When to Adjust:**
-- After cycle count confirms physical count differs from system
+- After scanning confirms count differs from system
 - After investigating and finding merchandise in wrong location
 - After receiving corrections are verified
 - When processing damaged/defective merchandise
@@ -282,7 +282,7 @@ The Inventory Recap Report (IRR) is a monthly financial report that shows your s
 - Review monthly with your team
 - Compare to previous months to identify trends
 - Focus on departments with highest variance
-- Use data to guide cycle counting priorities
+- Use data to guide which high-value/high-theft items to scan regularly
 - Partner with AP on high-shrink areas
 
 **Related Topics:** [IRR Reporting](../03_systems/irr_reporting.md)
@@ -324,7 +324,7 @@ Root cause analysis involves systematically investigating a problem to find the 
 3. **Ask Why #2** - "Why are items missing?" → "High-value items disappearing"
 4. **Ask Why #3** - "Why are high-value items disappearing?" → "No one is monitoring that aisle"
 5. **Ask Why #4** - "Why is no one monitoring?" → "We didn't know it was a problem"
-6. **Solution** - Implement increased monitoring, cycle counts, AP presence
+6. **Solution** - Implement increased monitoring, daily scans of high-value items with on-hand adjustments, AP presence
 
 **Investigation Steps:**
 1. Identify the problem specifically (what, where, when)
