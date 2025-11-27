@@ -1,6 +1,8 @@
 # agents.py
 import vertexai
-from vertexai.generative_models import GenerativeModel, Tool, grounding, HarmCategory, HarmBlockThreshold
+from vertexai.generative_models import GenerativeModel, Tool, HarmCategory, HarmBlockThreshold
+# Grounding (VertexAISearch) is still in preview namespace in SDK 1.72.0
+from vertexai.preview import generative_models as preview_models
 from langchain.agents import AgentExecutor, initialize_agent, AgentType
 from langchain.memory import ConversationBufferWindowMemory
 from typing import List
@@ -78,8 +80,8 @@ When users say any of the following, they are referring to the IRR (Inventory Re
     tools_list = []
     
     try:
-        # In SDK 1.72.0+, this is the correct stable syntax for Grounding
-        grounding_source = grounding.VertexAISearch(
+        # VertexAISearch is in preview namespace in SDK 1.72.0
+        grounding_source = preview_models.grounding.VertexAISearch(
             datastore_id="positirr_1764279062880",
             project=PROJECT_ID,
             location="global"
@@ -87,7 +89,7 @@ When users say any of the following, they are referring to the IRR (Inventory Re
         
         # Create the tool
         retrieval_tool = Tool.from_retrieval(
-            retrieval=grounding.Retrieval(source=grounding_source)
+            retrieval=preview_models.grounding.Retrieval(source=grounding_source)
         )
         
         tools_list = [retrieval_tool]

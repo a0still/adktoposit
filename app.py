@@ -46,6 +46,7 @@ except ImportError:
 
 from langchain_google_vertexai import ChatVertexAI
 from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
+from vertexai.generative_models import HarmCategory, HarmBlockThreshold
 from agents import create_chat_agent
 from ui import app_ui
 from src.server_custom_reports import setup_custom_reports_server
