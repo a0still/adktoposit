@@ -105,7 +105,7 @@ High Book vs SKU variance on your **Inventory Recap Report (IRR)** indicates sig
 ### What impacts Book but not SKU?
 
 **Answer:**  
-Certain financial transactions affect your Book inventory (financial records) but don't change physical SKU inventory until a specific action is taken.
+Certain financial transactions affect your Book inventory (financial records) but don't change SKU inventory (system on-hands) until a specific action is taken.
 
 **Things that impact ONLY Book:**
 - Home Office journal entries
@@ -138,7 +138,7 @@ Physical inventory changes affect SKU but don't update Book until the financial 
 - Open receivings (finalized) - Dollar value impacts Book only on inventory day
 
 **Why This Matters:**  
-When you adjust on-hands or process stolen merchandise, it immediately affects your physical count (SKU) but the financial record (Book) may not update until month-end or inventory day. This creates temporary variance that's expected and acceptable.
+When you adjust on-hands or process stolen merchandise, it immediately affects your system on-hands (SKU) but the financial record (Book) may not update until month-end or inventory day. This creates temporary variance that's expected and acceptable.
 
 **Related Topics:** [Replenishment and On-Hands](../02_processes/replenishment_and_on_hands.md)
 
@@ -275,7 +275,7 @@ The Inventory Recap Report (IRR) is a monthly financial report that shows your s
 - **Sales** - Merchandise sold to customers
 - **Markdowns** - Price reductions taken
 - **Book** - Financial inventory (what you should have)
-- **SKU** - Physical inventory (what the system onhands say you have)
+- **SKU** - System on-hand inventory (what your system says you have, ~50% accurate)
 - **Book vs SKU** - Your best shrink indicator (the difference between financial records and system on-hands)
 
 **How to Use It:**
