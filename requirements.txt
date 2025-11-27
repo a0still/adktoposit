@@ -1,4 +1,5 @@
 uvicorn==0.34.0
+fastapi==0.109.1
 shiny>=1.1.0
 python-dotenv
 faicons
@@ -8,6 +9,12 @@ shinywidgets
 pandas
 google.genai
 google-cloud-bigquery
+google-cloud-aiplatform>=1.38.0
+click==8.1.7
+pydantic==2.8.2
+langchain-google-vertexai==0.0.1
+langchain-community==0.0.16
+chromadb>=0.5.23
 google-generativeai
 markdown2
 openpyxl
