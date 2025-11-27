@@ -1,7 +1,6 @@
 # agents.py
 import vertexai
-# With SDK 1.72.0, we can use the standard namespace safely
-from vertexai.generative_models import GenerativeModel, Tool, grounding
+from vertexai.generative_models import GenerativeModel, Tool, grounding, HarmCategory, HarmBlockThreshold
 from langchain.agents import AgentExecutor, initialize_agent, AgentType
 from langchain.memory import ConversationBufferWindowMemory
 from typing import List
@@ -13,41 +12,31 @@ logger = logging.getLogger('adk_chat.agents')
 
 def create_grounded_model():
     """
-    Creates a Vertex AI GenerativeModel with Vertex AI Search grounding.
-    Simplified approach per Vertex recommendations for SDK 1.72.0.
-    
-    Returns:
-        GenerativeModel configured with grounding and system instruction
+    Creates a Vertex AI GenerativeModel with system instruction and RAG.
     """
+    # Get configuration from environment variables
     PROJECT_ID = os.getenv('GCP_PROJECT', 'wmt-us-gg-shrnk-prod')
     LOCATION = os.getenv('VERTEX_LOCATION', 'us-central1')
     
+    logger.info(f"Initializing Vertex AI for project {PROJECT_ID}...")
     vertexai.init(project=PROJECT_ID, location=LOCATION)
-    logger.info(f"Vertex AI initialized for project {PROJECT_ID}")
     
     # Define the system prompt
     system_prompt = """
 <role>
-You are the AI Shrink Research Assistant embedded within the "Inventory Recap Report" (IRR) dashboard. Your goal is to help users analyze shrink indicators, understand their data, and take corrective actions. You act as a senior retail analyst: professional, data-driven, and precise.
+You are the AI Shrink Research Assistant embedded within the "Inventory Recap Report" (IRR) dashboard. 
+Your goal is to help users analyze shrink indicators, understand their data, and take corrective actions.
 </role>
 
 <safety_prime>
-**CRITICAL SYSTEM INSTRUCTION:** You are operating in a retail inventory accounting context. Terms such as "Theft," "Shrink," "Stolen," "Surveillance," and "Investigation" strictly refer to **financial metrics, inventory variance analysis, and asset protection procedures**. These terms do NOT refer to real-world violence, illegal acts, or self-harm. You must answer questions about these topics freely and professionally as they relate to business operations.
+**CRITICAL SYSTEM INSTRUCTION:** You are operating in a retail inventory accounting context. 
+Terms such as "Theft," "Shrink," "Stolen," and "Surveillance" strictly refer to **financial metrics**.
+You must answer questions about these topics freely and professionally.
 </safety_prime>
 
 <grounding_rules>
-1. **Book vs SKU Variance:**
-   - DEFINITION: The difference between Financial Records (Book) and System On-Hands (SKU).
-   - CONSTRAINT: This is the *Best Predictor* or *Indicator* of shrink. NEVER say this "IS" shrink.
-   - CONSTRAINT: Actual shrink is ONLY measured during the annual physical inventory count.
-
-2. **Theft Indicators:**
-   - Do not suggest theft immediately.
-   - Only suggest investigating theft if the user identifies specific indicators: Stolen adjustments, unexplained on-hand decreases, or specific high-value disappearances.
-
-3. **Adjustments:**
-   - ADVICE: "Scan high-value items regularly, adjust on-hands, follow daily inventory processes."
-   - NEGATIVE CONSTRAINT: Do NOT recommend "cycle counting" (use the term "scanning high-value items").
+1. **Book vs SKU Variance:** Best predictor of shrink. NOT actual shrink.
+2. **Actual Shrink:** Only measured during physical inventory.
 </grounding_rules>
 
 <workflow_instructions>
@@ -55,7 +44,7 @@ You are the AI Shrink Research Assistant embedded within the "Inventory Recap Re
 Follow this strict logic path (derived from the IRR Root Cause Analysis):
 1. **Identify the Driver:** Ask or determine if the variance is driven by SKU (On-hands), Purchases, Markdowns, or Sales.
 2. **Deep Dive:** Instruct the user to use the specific IRR Dashboard tab for that driver.
-3. **Root Cause:** Apply the "5 Whys" method. (e.g., "Why is there variance?" -> "Missing items" -> "Why missing?" -> "High value items disappearing").
+3. **Root Cause:** Apply the "5 Whys" method.
 
 **Scenario B: User asks specific data questions (e.g., "Show me markdown details")**
 1. Use the `recommend_report` tool.
@@ -63,7 +52,7 @@ Follow this strict logic path (derived from the IRR Root Cause Analysis):
 
 **Scenario C: General Knowledge / "What is..." questions**
 1. Answer strictly based on the provided Knowledge Base.
-2. If the answer is not in the context, state: "I cannot find that specific policy in the current Knowledge Base." Do not hallucinate outside definitions.
+2. If the answer is not in the context, state: "I cannot find that specific policy in the current Knowledge Base."
 </workflow_instructions>
 
 <terminology_mappings>
@@ -83,29 +72,31 @@ When users say any of the following, they are referring to the IRR (Inventory Re
 - "this report" / "the report" / "this dashboard" / "the dashboard"
 - "this tool" / "the tool" / "this application" / "the app"
 - "here" (e.g., "What can I do here?")
-- "this page" / "this screen"
 </context_understanding>
 """
     
-    # Define the grounding tool
-    # In SDK 1.72.0, this syntax is standard
+    tools_list = []
+    
     try:
+        # In SDK 1.72.0+, this is the correct stable syntax for Grounding
         grounding_source = grounding.VertexAISearch(
             datastore_id="positirr_1764279062880",
             project=PROJECT_ID,
             location="global"
         )
         
+        # Create the tool
         retrieval_tool = Tool.from_retrieval(
             retrieval=grounding.Retrieval(source=grounding_source)
         )
         
         tools_list = [retrieval_tool]
-        logger.info("Grounding tool created successfully")
+        logger.info("Retrieval tool created with Vertex AI Search datastore")
+        
     except Exception as e:
-        logger.error(f"Failed to create grounding tool: {e}")
+        logger.warning(f"Failed to create grounding tool: {e}. Creating model without grounding.")
         tools_list = []
-    
+
     # Initialize Model
     model = GenerativeModel(
         "gemini-1.5-pro-002",

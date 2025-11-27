@@ -1137,12 +1137,9 @@ def server(input: Inputs, output: Outputs, session: Session):
                     return_messages=True,
                     output_key="output"
                 )
-                logger.info("Created conversation memory (5-message window)")
+                logger.info("Created conversation memory with 5-message window")
                 
-                # For compatibility with existing chat handler, we still use LangChain wrapper
-                # But the grounded model will be used for knowledge retrieval
-                from google.generativeai.types import HarmCategory, HarmBlockThreshold
-                
+                # Configure safety settings
                 safety_settings = {
                     HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_ONLY_HIGH,
                     HarmCategory.HARM_CATEGORY_HATE_SPEECH: HarmBlockThreshold.BLOCK_ONLY_HIGH,
