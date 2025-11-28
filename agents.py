@@ -80,14 +80,16 @@ When users say any of the following, they are referring to the IRR (Inventory Re
     tools_list = []
     
     try:
-        # Define the Data Store Source
+        # CORRECT FIX: Construct the full resource name manually
+        # This bypasses the parameter name confusion (datastore_id vs data_store_id)
+        grounding_resource_name = f"projects/{PROJECT_ID}/locations/global/collections/default_collection/dataStores/positirr_1764279062880"
+        
         grounding_source = grounding.VertexAISearch(
-            data_store_id="positirr_1764279062880",
+            datastore=grounding_resource_name, 
             project=PROJECT_ID,
             location="global"
         )
         
-        # Define the Tool using the source
         retrieval_tool = Tool.from_retrieval(
             retrieval=grounding.Retrieval(source=grounding_source)
         )
