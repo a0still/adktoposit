@@ -18,8 +18,8 @@ report_recommender = ReportRecommender()
 # Configuration - Pull from Env or use defaults
 PROJECT_ID = os.getenv('GCP_PROJECT', 'wmt-us-gg-shrnk-prod')
 LOCATION = "global" 
-# *** CRITICAL: Use the APP ID you created in the Console ***
-SEARCH_ENGINE_ID = "irr-search-engine"
+# *** REVERT TO DATA STORE ID (The raw ID, not the App ID) ***
+DATA_STORE_ID = "positirr_1764279062880"
 
 # Initialize BigQuery client
 try:
@@ -29,15 +29,15 @@ except Exception as e:
 
 # Initialize Vertex AI Search Retriever (Cloud Knowledge Base)
 try:
-    # We use 'engine_id' to connect to the Search App
+    # We must use 'data_store_id' to satisfy the library validation
     retriever = VertexAISearchRetriever(
         project_id=PROJECT_ID,
         location_id=LOCATION,
-        engine_id=SEARCH_ENGINE_ID,  # <--- Points to the App
+        data_store_id=DATA_STORE_ID,  # <--- Switch back to this
         max_documents=3,
         engine_data_type=0 
     )
-    logger.info(f"Vertex AI Search Retriever initialized for engine: {SEARCH_ENGINE_ID}")
+    logger.info(f"Vertex AI Search Retriever initialized for store: {DATA_STORE_ID}")
 except Exception as e:
     logger.error(f"Error initializing Vertex AI Search: {str(e)}")
     retriever = None
