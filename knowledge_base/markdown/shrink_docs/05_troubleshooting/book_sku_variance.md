@@ -1,17 +1,27 @@
-# Troubleshooting: High Book vs SKU Variance
+# Troubleshooting High Book vs SKU Variance
 
-## Problem Statement
+## What does high Book vs SKU variance mean?
 
-Your department or store shows a significant Book vs SKU variance, meaning your system on-hand inventory (SKU) is lower than your financial records (Book). This indicates a high likelihood of shrink - loss of inventory that's impacting your profitability. Note: SKU represents system on-hands (~50% accurate), not physical counts.
+When a department or store shows significant **Book vs SKU variance**, the system on-hand inventory (SKU) is lower than the financial records (Book). This indicates a **high likelihood of shrink** on inventory day.
 
-**What This Means:**
-- Missing merchandise that you paid for
-- Financial losses affecting store performance
-- Potential theft, errors, or operational issues
+**Understanding the Variance:**
+- **Book** = Financial records of what the store should have based on transactions
+- **SKU** = System on-hand inventory calculated from current on-hands (approximately 50% accurate)
+- **Variance** = Book minus SKU (when Book is higher, shrink is likely)
+
+**Important:** SKU represents system on-hands, NOT physical counts. Actual shrink is only measured during annual physical inventory.
+
+**What High Variance Means:**
+- **Missing merchandise** that was purchased but not accounted for
+- **Financial losses** affecting store profitability and performance metrics
+- **Potential causes:** Theft (external or internal), operational errors, or process breakdowns
+- **Action required:** Immediate investigation to identify and address root cause
 
 ---
 
-## Common Causes
+## What are the common causes of high Book vs SKU variance?
+
+High Book vs SKU variance can result from multiple factors. Identify the specific cause to implement the correct solution:
 
 ### 1. **External Theft (Shoplifting)**
 
@@ -84,9 +94,11 @@ Your department or store shows a significant Book vs SKU variance, meaning your 
 
 ---
 
-## Investigation Steps
+## How do I investigate high Book vs SKU variance?
 
-### Step 1: Analyze the Data
+Follow these systematic investigation steps to identify the root cause of high Book vs SKU variance:
+
+### Step 1: Analyze the Data on the Inventory Recap Report (IRR)
 
 **What to check:**
 - IRR Report - Identify which departments have highest variance
@@ -175,9 +187,11 @@ Your department or store shows a significant Book vs SKU variance, meaning your 
 
 ---
 
-## Solutions
+## What solutions should I implement based on the cause?
 
-### If Cause is External Theft:
+Once the root cause of high Book vs SKU variance is identified, implement targeted solutions:
+
+### If Cause is External Theft (Shoplifting):
 
 1. **Increase security measures**
    - Add EAS tags to high-theft items
@@ -265,7 +279,9 @@ Your department or store shows a significant Book vs SKU variance, meaning your 
 
 ---
 
-## Prevention
+## How do I prevent high Book vs SKU variance?
+
+Implement these ongoing best practices to prevent Book vs SKU variance from developing:
 
 ### Ongoing Best Practices:
 
@@ -301,9 +317,11 @@ Your department or store shows a significant Book vs SKU variance, meaning your 
 
 ---
 
-## When to Escalate
+## When should I escalate high Book vs SKU variance issues?
 
-Contact your District Manager or Regional AP if:
+Contact your **District Manager** or **Regional Asset Protection** for additional support if:
+
+**Escalation Triggers:**
 - Variance exceeds $10,000 and cause unclear
 - Suspected internal theft
 - Organized retail crime activity
