@@ -17,7 +17,7 @@ report_recommender = ReportRecommender()
 
 # Configuration - Pull from Env or use defaults
 PROJECT_ID = os.getenv('GCP_PROJECT', 'wmt-us-gg-shrnk-prod')
-DATA_STORE_ID = "irr-search-engine"  # Your specific Data Store ID (APP ID from GCP)
+DATA_STORE_ID = "positirr_1764279062880"  # Raw Data Store ID (now linked to App)
 LOCATION = "global"  # Agent Builder stores are usually global
 
 # Initialize BigQuery client
@@ -31,11 +31,11 @@ try:
     retriever = VertexAISearchRetriever(
         project_id=PROJECT_ID,
         location_id=LOCATION,
-        engine_id=DATA_STORE_ID,  # Use engine_id for Search Engine Apps
+        data_store_id=DATA_STORE_ID,  # Use data_store_id (now properly linked via App)
         max_documents=3,
         engine_data_type=0  # 0 = Unstructured (your markdown files)
     )
-    logger.info(f"Vertex AI Search Retriever initialized for engine: {DATA_STORE_ID}")
+    logger.info(f"Vertex AI Search Retriever initialized for store: {DATA_STORE_ID}")
 except Exception as e:
     logger.error(f"Error initializing Vertex AI Search: {str(e)}")
     retriever = None
